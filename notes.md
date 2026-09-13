@@ -233,3 +233,74 @@ url:localhost:8000/hospital/5/
 method:DELETE
 
 ```
+
+
+
+### Expense 
+
+
+id        Date       Category       Amount      payment_method
+1         12/04/26     Food           360           UPI
+2         13/04/26    Transport       120           Cash
+3         14/04/26    Shopping        850           Card
+4         15/04/26    Food            250           UPI
+5         16/04/26    Entertainment   500           Card
+6         17/04/26    Bills           1200          UPI
+7         18/04/26    Transport       180           Cash
+8         19/04/26    Groceries       1450          UPI
+9         20/04/26    Food            420           Card
+
+
+
+`http_request for adding a record to expense `
+
+```
+url:localhost:8000/expenses/
+method:POST
+body:{
+    "Date":"21/04/26",
+    "Category":"Transport",
+    "Amount":2000,
+    "payment_method":Card
+}
+
+```
+
+` http_request for listing the entire records of expense`
+
+```
+url:localhost:8000/expenses/
+method:GET
+```
+
+
+` http_request for listing record of a specific id `
+
+```
+url:localhost:8000/expenses/{id}/
+method:GET
+
+```
+
+`http_request for updating a record`
+
+```
+url:localhost:8000/expenses/{5}/
+method:PUT
+body:{
+
+    "Date":"18/04/26",
+    "Category":"Food",
+    "Amount":678,
+    payment_method:"UPI"
+
+}
+```
+
+` http_request for deleting a record`
+
+```
+url:localhost:8000/expenses/{id}/
+method:DELETE
+
+```
